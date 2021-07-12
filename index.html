@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Main</title>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+  <script type="text/javascript">
+  function loadXMLDoc()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("u11_div_text").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","/ajax/demo_get.asp",true);
+xmlhttp.send();
+}
+  function show()
+{
+
+	if (u14.style.display == 'none'){
+	document.getElementById('u14').style.display = 'block';
+	}
+	else {
+	document.getElementById('u14').style.display = 'none';
+	}
+	
+}
+  function showHint(str)
+{
+var xmlhttp;
+if (str.length==0)
+  {
+  document.getElementById("u11_div_text").innerHTML="";
+  return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("u11_div_text").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","getcontent.php?q="+str,true);
+xmlhttp.send();
+}
+    </script>
+
+  </head>
+  <body>
+  <form>
+    <div id="base" class="">
+      <div id="u0" class="ax_default heading_3">
+        <div id="u0_div" class=""></div>
+        <div id="u1" class="text" style="visibility: visible;">
+          <p><span style="color:#3366FF;">LIST CURRENT NAMES IN DATABASE CHAT TABLE&nbsp; &nbsp; &nbsp;&nbsp; </span><span style="color:#CC0033;">SQL</span><span style="color:#3366FF;"> select from Database</span></p>
+        </div>
+      </div>
+
+      <div id="u2" class="ax_default box_1">
+        <div id="u2_div" class=""></div>
+        <div id="u3" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <div id="u4" class="ax_default box_1">
+        <div class="">
+		<input id="u4_div" type="text" name="username" value=""/> 
+		</div>
+        <div id="u5" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <div id="u6" class="ax_default box_1">
+        <div class="">
+		<input id="u4_div" type="password" name="password" value=""/> 
+		</div>
+        <div id="u7" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <div id="u8" class="ax_default label">
+        <div id="u8_div" class=""></div>
+        <div id="u9" class="text" style="visibility: visible;">
+          <p><span>ENTER YOUR NAME /PASSWORD</span></p>
+        </div>
+      </div>
+
+      <div id="u10" class="ax_default box_1" >
+        <div id="u10_div" class=""><p id="u10_div_text"><br>Content entered here<br>sent to your chat table entry in database</p></div>
+        </div>
+      </div>
+	  
+	  <div>
+      <div  class="ax_default ellipse">
+        <button id="u22-2" type="button" onclick="show()"> <div  class="text" style="visibility: visible;">
+          <p><span>login</span></p>
+        </div>
+		</div>
+
+
+      <div id="u12" class="ax_default label">
+        <div id="u12_div" class=""></div>
+        <div id="u13" class="text" style="visibility: visible;">
+          <p ><span>CONTENT TRANSMITTED AS TYPED</span></p>
+        </div>
+      </div>
+	  
+	  <div>
+      <div  class="ax_default ellipse">
+        <button id="u22-3" type="button" > <div  class="text" style="visibility: visible;">
+          <p><span>save</span></p>
+        </div>
+		</div>
+
+
+      <div id="u14" class="ax_default box_1" style="display:none"  >
+        <div id="u14_div" class=""></div>
+        <div id="u15" class="text" style="visibility: visible;">
+          <p><span>WARING IN SPAN IF FAIL TO MAKE AN UPDATE</span></p>
+        </div>
+      </div>
+</form>
+      <div id="u16" class="ax_default box_1">
+        <div id="u16_div" class=""></div>
+        <div id="u17" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <div id="u18" class="ax_default box_1">
+        <div class="">
+		<input id="u4_div" type="text" name="username" value="1"/> 
+		</div>
+        <div id="u19" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <div id="u20" class="ax_default label">
+        <div id="u20_div" class=""></div>
+        <div id="u21" class="text" style="visibility: visible;">
+          <p><span>ENTER VALID NAME</span></p><p><span>&amp;RETRIEVE CHAT on listen CLICK</span></p>
+        </div>
+      </div>
+
+      <div  class="ax_default ellipse">
+        <button id="u22" type="button" > <div  class="text" style="visibility: visible;" onclick="showHint('Allen')">
+          <p><span>listen</span></p>
+        </div>
+		
+		</button>
+
+	
+      </div>
+
+      <div id="u24" class="ax_default box_1">
+        <div id="u24_div" class="">
+		<p id="u11_div_text"><br>Chat retrieved from named<br>person goes here</p>
+		</div>
+        <div id="u25" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+		  
+        </div>
+      </div>
+	  </form>
+  </body>
+</html>
